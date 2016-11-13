@@ -30,6 +30,8 @@ function MenuService($http, ApiPath) {
     return $http.get(ApiPath + '/menu_items/' + shortname + '.json')
                 .then(function (response) {
                   return response
+                }, function (error) {
+                  return error
                 });
   }
 }
