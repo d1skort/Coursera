@@ -1,0 +1,20 @@
+<div class="container">
+  <div class="row" ng-if="vm.registered">
+    <div class="col-md-6">
+      <h2>{{vm.user.firstname}}</h2>
+      <h2>{{vm.user.lastname}}</h2>
+      <h2>{{vm.user.email}}</h2>
+      <h2>{{vm.user.phone}}</h2>
+    </div>
+    <div class="col-md-6">
+      <h2>Favorite menu item: {{vm.user.favorite_dish.name}}</h2>
+      <img class="img-rounded" ng-src="{{vm.basePath}}/images/{{vm.user.favorite_dish.short_name}}.jpg" alt="{{vm.user.favorite_dish.name}}">
+      <p>{{vm.user.favorite_dish.description}}</p>
+    </div>
+  </div>
+  <div class="row" ng-if="!vm.registered">
+    <div class="text-center">
+      <h2>Not Signed Up Yet. <a ui-sref="public.signup">Sign Up Now!</a></h2>
+    </div>
+  </div>
+</div>
